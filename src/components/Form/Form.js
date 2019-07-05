@@ -25,7 +25,7 @@ export default class Formulario extends Component {
 
       fetchDataProduct(){
         const self = this
-        axios.get('http://localhost:3001/api/product')
+        axios.get('https://todo-list-back-55.herokuapp.com/api/product')
         .then(function (response) {
           const products = response.data.products
           self.setState({ products: products })
@@ -50,7 +50,7 @@ export default class Formulario extends Component {
       handleSubmit(event) {
         const { producto, precio, foto, description } = this.state
 
-        axios.post('http://localhost:3001/api/product', {
+        axios.post('https://todo-list-back-55.herokuapp.com/api/product', {
             name: producto,
             price: precio,
             picture: foto,
@@ -69,7 +69,7 @@ export default class Formulario extends Component {
 
       handleDelete(event) {
         const { borrar } = this.state
-        axios.delete('http://localhost:3001/api/product/' + borrar)
+        axios.delete('https://todo-list-back-55.herokuapp.com/api/product/' + borrar)
           .then(function (response) {
             console.log(response)
           })
